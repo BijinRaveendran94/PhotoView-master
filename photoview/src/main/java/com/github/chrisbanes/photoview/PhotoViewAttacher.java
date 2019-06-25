@@ -39,7 +39,7 @@ import android.widget.OverScroller;
 public class PhotoViewAttacher implements View.OnTouchListener,
     View.OnLayoutChangeListener {
 
-    private static float DEFAULT_MAX_SCALE = 6.0f;
+    private static float DEFAULT_MAX_SCALE = 10.0f;
     private static float DEFAULT_MID_SCALE = 1.75f;
     private static float DEFAULT_MIN_SCALE = 1.0f;
     private static int DEFAULT_ZOOM_DURATION = 200;
@@ -399,8 +399,8 @@ public class PhotoViewAttacher implements View.OnTouchListener,
     }
 
     public void setMaximumScale(float maximumScale) {
-        Util.checkZoomLevels(mMinScale, mMidScale, maximumScale);
-        mMaxScale = maximumScale;
+        Util.checkZoomLevels(mMinScale, mMidScale, mMaxScale);
+        mMaxScale = mMaxScale;
     }
 
     public void setScaleLevels(float minimumScale, float mediumScale, float maximumScale) {
